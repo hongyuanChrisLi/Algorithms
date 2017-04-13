@@ -5,7 +5,7 @@ import solutions.TwoSum;
 import structures.IntArrayInt;
 import testcases.TwoSumTestCases;
 
-public class TwoSumServiceImpl implements SolutionService {
+public class TwoSumServiceImpl extends SolutionService {
 
     @Override
     public void run() {

@@ -1,5 +1,5 @@
 package services;
 
-public interface SolutionService {
-    public void run();
+public abstract class SolutionService {
+    public abstract void run();
 }
