@@ -10,8 +10,9 @@ public class TwoSumTestCases extends TestCases<IntArrayInt, int[]> {
     public TwoSumTestCases() {
         this.add(
                 new TestCase<IntArrayInt, int[]>(
+                        "Test 1",
                         new IntArrayInt(new int[] { 2, 7, 11, 15 }, 9), 
-                        new int[] { 0, 1 }));
+                        new int[] { 0, 2 }));
     }
 
 }
