@@ -28,7 +28,7 @@ public class MedianTwoSortedArraysBestSolution extends MedianTwoSortedArrays {
         
         while (true) {
             i = (imin + imax) / 2;
-            j = ( m + n ) / 2 - i;
+            j = ( m + n + 1) / 2 - i;
             
             if ( ( i == 0 || j == n || a[i-1] <= b[j]) 
                     && ( i == m || j == 0 || a[i] > b[j-1])){
@@ -53,13 +53,8 @@ public class MedianTwoSortedArraysBestSolution extends MedianTwoSortedArrays {
     
     private int get_min_right (int i, int j){
         // System.out.printf("%d, %d\n", i, j);
-        if ( m == 0 || i == m )
-            // case 1 => a:{} b:{1}
-            // case 2 => a:{1} b:{2}
-            if ( j == n )
-                return b[j-1];
-            else 
-                return b[j];
+        if ( i == m )
+            return b[j];
             
         if ( j == n )
             return a[i];
@@ -70,10 +65,7 @@ public class MedianTwoSortedArraysBestSolution extends MedianTwoSortedArrays {
     private int get_max_left (int i, int j) {
         
         if ( i == 0 )
-            if ( j == 0 )
-                return b[j];
-            else
-                return b[j-1];
+            return b[j-1];
         
         if ( j == 0 )
             return a[i-1];
