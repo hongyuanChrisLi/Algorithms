@@ -1,7 +1,6 @@
-package solutions;
+package base;
 
 import structures.TestCase;
-import testcases.TestCases;
 
 public abstract class Solution<T_In, T_Out>{
 
@@ -11,7 +10,7 @@ public abstract class Solution<T_In, T_Out>{
             T_Out output = runTest(testCase.getInput());
             printOutput(testName, output);
             try{
-                testOutput(output, testCase.getOutput());
+                testOutput(testCase.getOutput(), output);
                 testSuccess(testName);
             }catch(AssertionError e){
                 testFailure(testName);
@@ -29,7 +28,12 @@ public abstract class Solution<T_In, T_Out>{
         System.out.println("[FAIL] " + testName);
     }
     
+    private void printOutput(String testName, T_Out output){
+        System.out.print("[OUTPUT] " + testName + ": ");
+        printOutputData(output);
+    };
+    
     protected abstract T_Out runTest(T_In input);
-    protected abstract void printOutput(String testName, T_Out output);
-    protected abstract void testOutput(T_Out output, T_Out outputTest);
+    protected abstract void printOutputData(T_Out output);
+    protected abstract void testOutput(T_Out outputTest, T_Out output);
 }

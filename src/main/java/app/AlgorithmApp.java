@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import services.SolutionService;
+import base.SolutionService;
+import services.MedianTwoSortedArraysServiceImpl;
 import services.TwoSumServiceImpl;
 
 public class AlgorithmApp {
@@ -18,6 +19,7 @@ public class AlgorithmApp {
     
     private void initServiceArray() {
         this.svcClassLst.add(TwoSumServiceImpl.class);
+        this.svcClassLst.add(MedianTwoSortedArraysServiceImpl.class);
     }
 
     private int pickSolutionToTest() {
@@ -26,6 +28,7 @@ public class AlgorithmApp {
         System.out.println("Please select a solution to test: [ 0 , " + Integer.toString(lstLen) + " )");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
+        sc.close();
         
         if (choice >= 0 && choice < lstLen){
             System.out.println("You chose: " + this.svcClassLst.get(choice).getName());

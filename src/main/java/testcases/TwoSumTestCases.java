@@ -1,5 +1,6 @@
 package testcases;
 
+import base.TestCases;
 import structures.IntArrayInt;
 import structures.TestCase;
 

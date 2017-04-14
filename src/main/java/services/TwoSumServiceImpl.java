@@ -1,6 +1,7 @@
 package services;
 
-import solutions.Solution;
+import base.Solution;
+import base.SolutionService;
 import solutions.TwoSum;
 import structures.IntArrayInt;
 import testcases.TwoSumTestCases;

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertArrayEquals;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import base.Solution;
 import structures.IntArrayInt;
 
 /*
@@ -46,14 +47,13 @@ public class TwoSum extends Solution<IntArrayInt, int[]> {
     }
 
     @Override
-    protected void printOutput(String testName, int[] output) {
-        System.out.print("[OUTPUT] " + testName + ": ");
+    protected void printOutputData(int[] output) {
         System.out.println(Arrays.toString(output));
     }
 
     @Override
-    protected void testOutput(int[] output, int[] outputTest) {
-        assertArrayEquals(output, outputTest);
+    protected void testOutput(int[] outputTest, int[] output) {
+        assertArrayEquals(outputTest, output);
     }
 
 }
