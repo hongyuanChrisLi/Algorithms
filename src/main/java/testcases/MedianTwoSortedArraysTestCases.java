@@ -36,8 +36,8 @@ public class MedianTwoSortedArraysTestCases extends TestCases<IntArrayIntArray, 
                         "Test Empty A",
                         new IntArrayIntArray(
                                 new int[] { },
-                                new int[] { 2 }), 
-                        new Double(2.0)));
+                                new int[] { 2, 3 }), 
+                        new Double(2.5)));
         this.add(
                 new TestCase<IntArrayIntArray, Double>(
                         "Test Longer inputs",
@@ -52,6 +52,34 @@ public class MedianTwoSortedArraysTestCases extends TestCases<IntArrayIntArray, 
                                 new int[] { 7, 7, 7, 7},
                                 new int[] { 7, 7}), 
                         new Double(7.0)));
+        this.add(
+                new TestCase<IntArrayIntArray, Double>(
+                        "Test Boundary Median (Even)",
+                        new IntArrayIntArray(
+                                new int[] { 1, 2, 3, 4 },
+                                new int[] { 5, 6, 7, 8 }), 
+                        new Double(4.5)));
+        this.add(
+                new TestCase<IntArrayIntArray, Double>(
+                        "Test Boundary Median (Odd)",
+                        new IntArrayIntArray(
+                                new int[] { 1, 2, 3, 4 },
+                                new int[] { 5, 6, 7, 8, 9 }), 
+                        new Double(5.0)));
+        this.add(
+                new TestCase<IntArrayIntArray, Double>(
+                        "Test Median in Longer",
+                        new IntArrayIntArray(
+                                new int[] { 1, 2, 3, 4 },
+                                new int[] { 5, 6, 7, 8, 9, 10 }), 
+                        new Double(5.5)));
+        this.add(
+                new TestCase<IntArrayIntArray, Double>(
+                        "Test 1 on 1",
+                        new IntArrayIntArray(
+                                new int[] { 1001 },
+                                new int[] { 1000 }), 
+                        new Double(1000.5)));
     }
 
 }

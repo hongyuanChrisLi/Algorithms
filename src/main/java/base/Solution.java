@@ -21,11 +21,11 @@ public abstract class Solution<T_In, T_Out>{
     }
     
     private void testSuccess(String testName){
-        System.out.println("[PASS] " + testName);
+        System.out.println("[PASS] " + testName + "\n");
     }
     
     private void testFailure(String testName){
-        System.out.println("[FAIL] " + testName);
+        System.out.println("[FAIL] " + testName + "\n");
     }
     
     private void printOutput(String testName, T_Out output){

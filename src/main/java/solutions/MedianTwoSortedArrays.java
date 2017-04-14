@@ -2,8 +2,6 @@ package solutions;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
-
 import base.Solution;
 import structures.IntArrayIntArray;
 
@@ -47,7 +45,8 @@ public class MedianTwoSortedArrays extends Solution<IntArrayIntArray, Double> {
     protected void testOutput(Double outputTest, Double output) {
         assertEquals(outputTest.doubleValue(), output.doubleValue(), 0.001);
     }
-    
+   
+  // [FAIL] Time Limit Exceeded  
     int[] medians = new int[2];
     int medIdx;
     
@@ -107,7 +106,8 @@ public class MedianTwoSortedArrays extends Solution<IntArrayIntArray, Double> {
         return false;
     }
     
-/*    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+/* [FAIL] Time Limit Exceeded   
+ * public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         
         int nums1Len = nums1.length;
         int nums2Len = nums2.length;
