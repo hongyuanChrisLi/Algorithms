@@ -1,26 +1,13 @@
 package app;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import base.SolutionService;
-import services.MedianTwoSortedArraysServiceImpl;
-import services.TwoSumServiceImpl;
 
 public class AlgorithmApp {
     
     private static final int INVALID_CHOICE = -1;
-    private List<Class<? extends SolutionService>> svcClassLst = new ArrayList<Class<? extends SolutionService>>();
-
-    public AlgorithmApp(){
-        initServiceArray();
-    }
-    
-    private void initServiceArray() {
-        this.svcClassLst.add(TwoSumServiceImpl.class);
-        this.svcClassLst.add(MedianTwoSortedArraysServiceImpl.class);
-    }
+    private ServiceClassList svcClassLst = new ServiceClassList();
 
     private int pickSolutionToTest() {
         int lstLen = this.svcClassLst.size();

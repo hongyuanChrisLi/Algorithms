@@ -43,7 +43,7 @@ public class TwoSum extends Solution<IntArrayInt, int[]> {
 
     @Override
     protected int[] runTest(IntArrayInt input) {
-        return this.twoSum(input.getNumArray(), input.getNum());
+        return this.twoSum(input.numArray, input.num);
     }
 
     @Override

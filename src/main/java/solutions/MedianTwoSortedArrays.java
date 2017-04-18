@@ -33,7 +33,7 @@ public class MedianTwoSortedArrays extends Solution<IntArrayIntArray, Double> {
 
     @Override
     protected Double runTest(IntArrayIntArray input) {
-        return this.findMedianSortedArrays(input.getArrayA(), input.getArrayB());
+        return this.findMedianSortedArrays(input.arrayA,input.arrayB);
     }
 
     @Override
