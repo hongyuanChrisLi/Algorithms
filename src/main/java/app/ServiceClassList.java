@@ -3,6 +3,7 @@ package app;
 import java.util.ArrayList;
 
 import base.SolutionService;
+import services.AddTwoListNodeNumsServiceImpl;
 import services.MedianTwoSortedArraysServiceImpl;
 import services.TwoSumServiceImpl;
 
@@ -12,6 +13,7 @@ public class ServiceClassList extends ArrayList<Class<? extends SolutionService>
     public ServiceClassList(){
         this.add(TwoSumServiceImpl.class);
         this.add(MedianTwoSortedArraysServiceImpl.class);
+        this.add(AddTwoListNodeNumsServiceImpl.class);
     }
 
 }

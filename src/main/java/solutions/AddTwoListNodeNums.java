@@ -1,6 +1,9 @@
 package solutions;
 
+import static org.junit.Assert.assertEquals;
+
 import base.Solution;
+import mappers.ListNodeMapper;
 import structures.ListNode;
 import structures.ListNodeListNode;
 
@@ -24,20 +27,22 @@ public class AddTwoListNodeNums extends Solution<ListNodeListNode, ListNode> {
 
     @Override
     protected ListNode runTest(ListNodeListNode input) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.addTwoNumbers(input.listNodeA, input.listNodeB);
     }
 
     @Override
     protected void printOutputData(ListNode output) {
-        // TODO Auto-generated method stub
-        
+        System.out.println(ListNodeMapper.toString(output));
     }
 
     @Override
     protected void testOutput(ListNode outputTest, ListNode output) {
-        // TODO Auto-generated method stub
-        
+        assertEquals( ListNodeMapper.toString(outputTest), ListNodeMapper.toString(output));
     }
 
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+        return l1;
+    }
+    
 }
