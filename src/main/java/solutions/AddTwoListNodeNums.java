@@ -39,10 +39,63 @@ public class AddTwoListNodeNums extends Solution<ListNodeListNode, ListNode> {
     protected void testOutput(ListNode outputTest, ListNode output) {
         assertEquals( ListNodeMapper.toString(outputTest), ListNodeMapper.toString(output));
     }
+    
+    ListNode head, tail;
+    int carryOver;
+    int sum, val;
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        head = null;
+        tail = null;
+        carryOver = 0;
         
-        return l1;
+        
+        while ( l1 != null && l2 != null) {
+            sum = l1.val + l2.val + carryOver;
+            val = sum % 10;
+            carryOver = sum / 10;
+            
+            ListNode node = new ListNode(val);
+            
+            if ( head == null) {
+                head = node;
+                tail = head;
+            } else {
+                tail.next = node;
+                tail = node;
+            }
+            
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        
+        processRest(l1);
+        processRest(l2);
+        
+        if (carryOver > 0)
+            tail.next = new ListNode(carryOver);
+        
+        return head;
     }
     
+    private void processRest(ListNode node) {
+        
+        int sum, val;
+        
+        while (carryOver > 0 && node != null){
+            sum = node.val + carryOver;
+            val = sum % 10;
+            carryOver = sum / 10;
+            node.val = val;
+            
+            tail.next = node;
+            tail = node;
+            node = node.next;
+        }
+        
+        if ( node != null) {
+            tail.next = node;
+            tail = node;
+        }
+    }
 }

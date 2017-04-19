@@ -12,7 +12,8 @@ public class AlgorithmApp {
     private int pickSolutionToTest() {
         int lstLen = this.svcClassLst.size();
         
-        System.out.println("Please select a solution to test: [ 0 , " + Integer.toString(lstLen) + " )");
+        System.out.println("Last solution ==> " + this.svcClassLst.get(lstLen-1).getName());
+        System.out.println("Please select a solution to test: [ 0 - " + Integer.toString(lstLen - 1) + " ]");
         Scanner sc = new Scanner(System.in);
         int choice = sc.nextInt();
         sc.close();
