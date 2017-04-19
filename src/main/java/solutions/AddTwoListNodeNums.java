@@ -49,7 +49,6 @@ public class AddTwoListNodeNums extends Solution<ListNodeListNode, ListNode> {
         tail = null;
         carryOver = 0;
         
-        
         while ( l1 != null && l2 != null) {
             sum = l1.val + l2.val + carryOver;
             val = sum % 10;

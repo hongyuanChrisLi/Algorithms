@@ -40,5 +40,12 @@ public class AddTwoListNodeNumsTestCases extends TestCases<ListNodeListNode, Lis
                                 ListNodeMapper.toListNode(new int[]{1, 8}), 
                                 ListNodeMapper.toListNode(new int[]{0})),
                         ListNodeMapper.toListNode(new int[]{1,8})));
+        this.add(
+                new TestCase<ListNodeListNode, ListNode>(
+                        "Test New Node",
+                        new ListNodeListNode(
+                                ListNodeMapper.toListNode(new int[]{9, 9, 9}), 
+                                ListNodeMapper.toListNode(new int[]{1})),
+                        ListNodeMapper.toListNode(new int[]{0, 0, 0, 1})));
     }
 }
