@@ -13,6 +13,26 @@ public class LongestPalindromeTestCases extends TestCases<String, String[]> {
                         "Test Example 1",
                         "babad",
                         new String[]{"bab", "aba"}));
+        this.add(
+                new TestCase<String, String[]>(
+                        "Test Example 2",
+                        "cbbd",
+                        new String[]{"bb"}));
+        this.add(
+                new TestCase<String, String[]>(
+                        "Test No Palindrome",
+                        "abcd",
+                        new String[]{"a", "b", "c", "d"}));
+        this.add(
+                new TestCase<String, String[]>(
+                        "Test Empty String",
+                        "",
+                        new String[]{""}));
+        this.add(
+                new TestCase<String, String[]>(
+                        "Test One Character",
+                        "x",
+                        new String[]{"x"}));
     }
 
 }
