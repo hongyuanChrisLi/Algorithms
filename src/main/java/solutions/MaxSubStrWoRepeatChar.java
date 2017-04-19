@@ -2,6 +2,9 @@ package solutions;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import base.Solution;
 
 /*
@@ -37,8 +40,29 @@ public class MaxSubStrWoRepeatChar extends Solution<String, Integer> {
 
     public int lengthOfLongestSubstring(String s) {
         
-        return 0;
+        int strLen = s.length();
+        
+        if (strLen == 0)
+            return 0;
+        
+        Map<Character, Integer> subStrMap = new HashMap<Character, Integer>();
+        int start = 0, maxLen = 0;
+        
+        for (int i = 0; i < strLen; i++) { 
+            
+            Character charVal = new Character (s.charAt(i));
+            
+            if (subStrMap.containsKey(charVal)) {
+                int idx = subStrMap.get(charVal);
+                if (idx >= start) 
+                    start = idx + 1;
+            } 
+            
+            if ( i - start + 1 > maxLen)
+                maxLen = i - start + 1;
+            
+            subStrMap.put(charVal, i);
+        }
+        return maxLen;
     }
-
-
 }
