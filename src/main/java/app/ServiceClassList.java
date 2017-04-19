@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import base.SolutionService;
 import services.AddTwoListNodeNumsServiceImpl;
+import services.LongestPalindromeServiceImpl;
 import services.MaxSubStrWoRepeatCharServiceImpl;
 import services.MedianTwoSortedArraysServiceImpl;
 import services.TwoSumServiceImpl;
@@ -16,6 +17,7 @@ public class ServiceClassList extends ArrayList<Class<? extends SolutionService>
         this.add(MedianTwoSortedArraysServiceImpl.class);
         this.add(AddTwoListNodeNumsServiceImpl.class);
         this.add(MaxSubStrWoRepeatCharServiceImpl.class);
+        this.add(LongestPalindromeServiceImpl.class);
     }
 
 }

@@ -8,29 +8,31 @@ public abstract class Solution<T_In, T_Out>{
         for ( TestCase<T_In, T_Out> testCase : testCases){
             String testName = this.getClass().getSimpleName() + " - " + testCase.getTestName();
             T_Out output = runTest(testCase.getInput());
-            printOutput(testName, output);
             try{
                 testOutput(testCase.getOutput(), output);
-                testSuccess(testName);
+                testSuccess(testName, output);
             }catch(AssertionError e){
-                testFailure(testName);
+                testFailure(testName, output);
                 System.out.println(e);
                 System.exit(1);
             }
         }
     }
     
-    private void testSuccess(String testName){
-        System.out.println("[PASS] " + testName + "\n");
+    private void testSuccess(String testName, T_Out output){
+        System.out.println("[PASS] " + testName);
+        printOutput(output);
     }
     
-    private void testFailure(String testName){
-        System.out.println("[FAIL] " + testName + "\n");
+    private void testFailure(String testName, T_Out output){
+        System.out.println("[FAIL] " + testName);
+        printOutput(output);
     }
     
-    private void printOutput(String testName, T_Out output){
-        System.out.print("[OUTPUT] " + testName + ": ");
+    private void printOutput(T_Out output){
+        System.out.print("\t[OUTPUT]: ");
         printOutputData(output);
+        System.out.println("");
     };
     
     protected abstract T_Out runTest(T_In input);
