@@ -37,8 +37,37 @@ public class MaxSubStrWoRepeatChar extends Solution<String, Integer> {
     protected void testOutput(Integer outputTest, Integer output) {
        assertEquals(outputTest, output);
     }
-
+    
     public int lengthOfLongestSubstring(String s) {
+        
+        int strLen = s.length();
+        
+        if (strLen == 0)
+            return 0;
+        
+        int baseAscii = (int) ' ';
+        
+        int[] subStrMap = new int[100]; 
+        int start = 1, maxLen = 0;
+        
+        for (int i = 1; i <= strLen; i++) {
+            
+            int charIdx = (int) s.charAt(i-1) - baseAscii;
+            int strIdx = subStrMap[charIdx];
+            if (strIdx != 0 && strIdx >= start) 
+                start = strIdx + 1;
+            
+            if ( i - start + 1 > maxLen)
+                maxLen = i - start + 1;
+            
+            subStrMap[charIdx] = i;
+        }
+        return maxLen;  
+    }
+    
+    
+    
+/*    public int lengthOfLongestSubstring(String s) {
         
         int strLen = s.length();
         
@@ -64,5 +93,5 @@ public class MaxSubStrWoRepeatChar extends Solution<String, Integer> {
             subStrMap.put(charVal, i);
         }
         return maxLen;
-    }
+    }*/
 }

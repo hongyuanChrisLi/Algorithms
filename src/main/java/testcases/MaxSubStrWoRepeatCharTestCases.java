@@ -16,6 +16,7 @@ public class MaxSubStrWoRepeatCharTestCases extends TestCases<String, Integer> {
         this.add(new TestCase<String, Integer>("Test 6 One Char", "x", 1));
         this.add(new TestCase<String, Integer>("Test 5 Full Length", "abcdefghijk", 11));
         this.add(new TestCase<String, Integer>("Test 5 Mirror", "abcdefgfedcba", 7));
+        this.add(new TestCase<String, Integer>("Test 5 Special Char", "abDBC_sedEFS_", 12));
         
     }
 
