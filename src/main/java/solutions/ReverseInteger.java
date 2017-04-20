@@ -22,7 +22,44 @@ public class ReverseInteger extends Solution<Integer, Integer> {
     }
     
     public int reverse(int x) {
-        return 0;
+        
+        int res = 0;
+        int maxResBound = 214748364;
+        
+        
+        while (x != 0){
+            
+            if ((res >= maxResBound) || (res <= -maxResBound)){
+                int attempt = res * 10 + x;
+                if (attempt / 10 != res)
+                    return 0; 
+            }
+                    
+            res = res * 10 + x % 10;
+            x = x / 10;      
+        }
+        return res;
     }
 
+    
+/*public int reverse(int x) {
+        
+        int res = 0;
+        int maxResBound = 214748364;
+        
+        
+        while (x != 0){
+            
+            if ( (res > maxResBound) 
+                    || (res < -maxResBound) 
+                    || (res == maxResBound && x > 7) 
+                    || (res == -maxResBound && x < -8) )
+                return 0;      
+            
+            res = res * 10 + x % 10;
+            x = x / 10;      
+        }
+        return res;
+    }*/
+    
 }
