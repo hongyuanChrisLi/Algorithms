@@ -4,6 +4,7 @@ import base.Solution;
 import base.SolutionService;
 import base.TestCases;
 import solutions.LongestPalindrome;
+import solutions.LongestPalindromeManacher;
 import testcases.LongestPalindromeTestCases;
 
 public class LongestPalindromeServiceImpl extends SolutionService {
@@ -14,7 +15,9 @@ public class LongestPalindromeServiceImpl extends SolutionService {
 
         Solution<String, String[]> solution = new LongestPalindrome();
         solution.runTests(testCases);
-
+        
+        solution = new LongestPalindromeManacher();
+        solution.runTests(testCases);
     }
 
 }
