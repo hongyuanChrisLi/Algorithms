@@ -15,6 +15,7 @@ public class ServiceClassList extends ArrayList<Class<? extends SolutionService>
         this.add(MaxSubStrWoRepeatCharServiceImpl.class);
         this.add(LongestPalindromeServiceImpl.class);
         this.add(ZigZagConvertServiceImpl.class);
+        this.add(ReverseIntegerServiceImpl.class);
     }
 
 }
