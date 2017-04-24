@@ -12,6 +12,9 @@ public class MaxCommonSubSeqTestCases extends TestCases<TwoComposite<String, Str
 
     public MaxCommonSubSeqTestCases() {
         addTestCase("Test Example 1", "ABAZDC", "BACBAD", "ABAD");
+        addTestCase("Test Longer Str", "BECDSAADCE", "ABSDCASAADCFASDF", "BCSAADC");
+        addTestCase("Test Single Char", "A", "A", "A");
+        addTestCase("Test Empty Str", "ABCD", "", "");
     }
 
     @Override
