@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import base.Solution;
-import structures.IntArrayInt;
+import structures.TwoComposite;
 
 /*
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -19,7 +19,7 @@ return [0, 1].
  * 
  * */
 
-public class TwoSum extends Solution<IntArrayInt, int[]> {
+public class TwoSum extends Solution<TwoComposite<int[], Integer>, int[]> {
 
     public int[] twoSum(int[] nums, int target) {
 
@@ -42,8 +42,8 @@ public class TwoSum extends Solution<IntArrayInt, int[]> {
     }
 
     @Override
-    protected int[] runTest(IntArrayInt input) {
-        return this.twoSum(input.numArray, input.num);
+    protected int[] runTest(TwoComposite<int[], Integer> input) {
+        return this.twoSum(input.var1, input.var2);
     }
 
     @Override
