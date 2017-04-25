@@ -2,6 +2,8 @@ package solutions.dp;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import base.Solution;
 import structures.TwoComposite;
 
@@ -40,25 +42,43 @@ public class MaxCommonSubSeqBtmUp extends Solution<TwoComposite<String, String>,
         assertEquals(outputTest, output);
     }
 
+    protected String strA;
+    protected String strB;
+    protected int strALen;
+    protected int strBLen;
+    protected int[][] refTab;
+    
     public String findSeq(String strA, String strB) {
+        init(strA, strB);
+        lcs(strALen, strBLen);
 
-        int strALen = strA.length();
-        int strBLen = strB.length();
+        /*for (int i = 0; i < strALen; i++)
+            System.out.println(Arrays.toString(refTab[i + 1]));*/
+        return traceBack();
+    }
 
-        int[][] refTab = new int[strALen + 1][strBLen + 1];
-
-        for (int i = 0; i < strALen; i++) {
-            for (int j = 0; j < strBLen; j++) {
-                if (strA.charAt(i) == strB.charAt(j))
-                    refTab[i + 1][j + 1] = refTab[i][j] + 1;
+    protected void init(String strA, String strB){
+        this.strA = strA;
+        this.strB = strB;
+        this.strALen = strA.length();
+        this.strBLen = strB.length();
+        this.refTab = new int[strALen + 1][strBLen + 1];
+    }
+    
+    protected int lcs(int m, int n){
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (this.strA.charAt(i) == this.strB.charAt(j))
+                    this.refTab[i + 1][j + 1] = this.refTab[i][j] + 1;
                 else
-                    refTab[i + 1][j + 1] = Math.max(refTab[i][j + 1], refTab[i + 1][j]);
+                    this.refTab[i + 1][j + 1] = Math.max(this.refTab[i][j + 1], this.refTab[i + 1][j]);
             }
         }
-
-/*        for (int i = 0; i < strALen; i++)
-            System.out.println(Arrays.toString(refTab[i + 1]));*/
-
+        return this.refTab[m][n];
+    }
+    
+    private String traceBack(){
+        
         String res = "";
 
         for (int i = strALen, j = strBLen; i > 0 && j > 0;) {
@@ -75,8 +95,8 @@ public class MaxCommonSubSeqBtmUp extends Solution<TwoComposite<String, String>,
                 j -= 1;
             }
         }
-
+        
         return res;
     }
-
+    
 }
