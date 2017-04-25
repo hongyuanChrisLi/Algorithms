@@ -21,6 +21,7 @@ public class ServiceClassList extends ArrayList<Class<? extends SolutionService>
         this.add(PalindromeNumberServiceImpl.class);
         
         this.add(MaxCommonSubSeqServiceImpl.class);
+        this.add(KnapsackServiceImpl.class);
     }
 
 }
