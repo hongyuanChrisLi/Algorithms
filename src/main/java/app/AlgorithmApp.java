@@ -7,40 +7,56 @@ import base.SolutionService;
 public class AlgorithmApp {
     
     private static final int INVALID_CHOICE = -1;
-    private ServiceClassList svcClassLst = new ServiceClassList();
+    private LeetCodeServiceClassMap leetMap = new LeetCodeServiceClassMap();
+    private MiscServiceClassMap miscMap = new MiscServiceClassMap();
 
-    private int pickSolutionToTest() {
-        int lstLen = this.svcClassLst.size();
+    private void printDesc(){
+        String leetLatest = leetMap.getLastest();
+        System.out.println("=== LeetCode Solutions ===");
+        System.out.println("\tTotal: " + leetMap.getTotStr() + " | Max: " + leetMap.getMaxNumStr());
+        System.out.println("\tLatest No. " + leetLatest +  " ==> " + leetMap.get(leetLatest).getName());
         
-        System.out.println("Latest solution No. " + Integer.toString(lstLen) +  " ==> " + this.svcClassLst.get(lstLen-1).getName());
-        System.out.println("Please select a solution to test: [ 1 - " + Integer.toString(lstLen) + " ]");
+        String miscLatest = miscMap.getLatest();
+        System.out.println("=== Misc Solutions ===");
+        System.out.println("\tlatest No. " + miscLatest + " ==> " + miscMap.get(miscLatest).getName());
+        
+        System.out.println("\nPlease select a solution to test:");
+    }
+    
+    private String getChoice() {
+       
+        printDesc();
         Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt() - 1;
+        String choice = sc.next().trim();
         sc.close();
         
-        if (choice >= 0 && choice < lstLen){
-            System.out.println("You chose: " + this.svcClassLst.get(choice).getName());
-            return choice;
-        }
-        
-        System.out.println("Invalid choice");
-        return INVALID_CHOICE;
+        return choice;
     }
     
     public Class<? extends SolutionService> userClassChoice(){
-        int choice = pickSolutionToTest();
         
-        if ( choice == INVALID_CHOICE ){
-            System.exit(INVALID_CHOICE);
-        }
+        String choice = getChoice();
+
+        if (leetMap.containsKey(choice)){
+            System.out.println("You chose: " + this.leetMap.get(choice).getName());
+            return this.leetMap.get(choice);
+        } else if (miscMap.containsKey(choice)){
+            System.out.println("You chose: " + this.miscMap.get(choice).getName());
+            return this.miscMap.get(choice);
+        } 
         
-        return svcClassLst.get(choice);
+        System.out.println("Invalid Choice");
+        return null;
     }
 
     public static void main(String[] args) {
         AlgorithmApp app = new AlgorithmApp();
         Class<? extends SolutionService> solutionServiceClass = app.userClassChoice();
        
+        if (solutionServiceClass == null) {
+            System.exit(INVALID_CHOICE);
+        }
+        
         SolutionService solutionService;
         try {
             solutionService = solutionServiceClass.newInstance();
