@@ -61,8 +61,8 @@ public class KnapsackBtmUp extends Solution<TwoComposite<int[][], Integer>, List
     public List<Integer> findOptimal(){
         buildRefTab();
         
-        for (int i = 0; i < itemNum; i++)
-            System.out.println(Arrays.toString(refTab[i + 1]));
+        /*for (int i = 0; i < itemNum; i++)
+            System.out.println(Arrays.toString(refTab[i + 1]));*/
         
         return traceBack();
     }
