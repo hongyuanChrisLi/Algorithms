@@ -1,5 +1,7 @@
 package services.dp;
 
+import java.util.List;
+
 import base.Solution;
 import base.SolutionService;
 import base.TestCases;
@@ -11,9 +13,9 @@ public class KnapsackServiceImpl extends SolutionService {
 
     @Override
     public void run() {
-        TestCases<TwoComposite<int[][], Integer>, int[]> testCases = new KnapsackTestCases();
+        TestCases<TwoComposite<int[][], Integer>, List<Integer>> testCases = new KnapsackTestCases();
 
-        Solution<TwoComposite<int[][], Integer>, int[]> solution = new KnapsackBtmUp();
+        Solution<TwoComposite<int[][], Integer>, List<Integer>> solution = new KnapsackBtmUp();
         solution.runTests(testCases);
     }
 
