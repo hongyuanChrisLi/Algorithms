@@ -8,6 +8,20 @@ import java.util.List;
 
 import base.Solution;
 
+/*
+ * 
+ * 
+/src/main/resources/lect001 Example 3
+/src/main/resources/L12
+
+Definition 11.3 The Matrix Product Parenthesization problem is as follows. Suppose we
+need to multiply a series of matrices: A1 × A2 × A3 × . . . × An. Given the dimensions of these
+matrices, what is the best way to parenthesize them, assuming for simplicity that standard matrix
+multiplication is to be used (e.g., not Strassen)?
+
+ * 
+ * */
+
 public class ChainMatricesBtmUp extends Solution<int[], List<List<Integer>>> {
 
     @Override
@@ -48,13 +62,13 @@ public class ChainMatricesBtmUp extends Solution<int[], List<List<Integer>>> {
     public List<Integer> findSeq() {
         buildRefTabs();
         
-        for (int i = 0; i < pLen; i++)
+/*        for (int i = 0; i < pLen; i++)
             System.out.println(Arrays.toString(refCost[i]));
         
         System.out.println("");
         
         for (int i = 0; i < pLen; i++)
-            System.out.println(Arrays.toString(refSeq[i]));
+            System.out.println(Arrays.toString(refSeq[i]));*/
         
         return traceBack(1, pLen-1);
 
@@ -78,10 +92,10 @@ public class ChainMatricesBtmUp extends Solution<int[], List<List<Integer>>> {
     protected List<Integer> traceBack(int start, int end){
         
         List<Integer> res = new ArrayList<Integer>();
-        System.out.printf("%d, %d\n", start, end);
+        //System.out.printf("%d, %d\n", start, end);
         if ( start < end ) {
             int mid = refSeq[start][end];
-            System.out.println(mid);
+            //System.out.println(mid);
             
             if (end - mid > 1 || mid > start)
                 res.add(mid);

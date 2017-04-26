@@ -11,6 +11,7 @@ import structures.TwoComposite;
 
 /*
  * 
+/src/main/resources/lect001 Example 2
 
 Definition 11.2 In the knapsack problem we are given a set of n items, 
     where each item i is specified by a size si and a value vi. 
