@@ -12,6 +12,7 @@ public class MiscServiceClassMap extends HashMap<String, Class<? extends Solutio
     public MiscServiceClassMap(){
         addClass("dp1", MaxCommonSubSeqServiceImpl.class);
         addClass("dp2", KnapsackServiceImpl.class);
+        addClass("dp3", ChainMatricesServiceImpl.class);
     }
     
     private void addClass(String key, Class<? extends SolutionService> solutionClass) {
