@@ -14,6 +14,7 @@ public class AlgorithmApp {
         String leetLatest = leetMap.getLastest();
         System.out.println("=== LeetCode Solutions ===");
         System.out.println("\tTotal: " + leetMap.getTotStr() + " | Max: " + leetMap.getMaxNumStr());
+        System.out.println("\tAvailable choices: " + leetMap.getNumRange());
         System.out.println("\tLatest No. " + leetLatest +  " ==> " + leetMap.get(leetLatest).getName());
         
         String miscLatest = miscMap.getLatest();
@@ -44,8 +45,6 @@ public class AlgorithmApp {
             System.out.println("You chose: " + this.miscMap.get(choice).getName());
             return this.miscMap.get(choice);
         } 
-        
-        System.out.println("Invalid Choice");
         return null;
     }
 
@@ -54,6 +53,7 @@ public class AlgorithmApp {
         Class<? extends SolutionService> solutionServiceClass = app.userClassChoice();
        
         if (solutionServiceClass == null) {
+            System.out.println("Invalid Choice");
             System.exit(INVALID_CHOICE);
         }
         
