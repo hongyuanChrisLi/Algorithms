@@ -1,5 +1,7 @@
 package services.dp;
 
+import java.util.List;
+
 import base.Solution;
 import base.SolutionService;
 import base.TestCases;
@@ -11,9 +13,9 @@ public class ChainMatricesServiceImpl extends SolutionService {
 
     @Override
     public void run() {
-        TestCases<int[], int[]> testCases = new ChainMatricesTestCases();
+        TestCases<int[], List<List<Integer>>> testCases = new ChainMatricesTestCases();
 
-        Solution<int[], int[]> solution = new ChainMatricesBtmUp();
+        Solution<int[], List<List<Integer>>> solution = new ChainMatricesBtmUp();
         solution.runTests(testCases);
 
     }
