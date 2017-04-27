@@ -10,6 +10,10 @@ public class ClimbStairsTestCases extends TestCases<Integer, Integer> implements
 
     public ClimbStairsTestCases(){
         addTestCase("Basic Test", 5, 8);
+        addTestCase("Test 0", 0, 1);
+        addTestCase("Test 1", 1, 1);
+        addTestCase("Test 2", 2, 2);
+        addTestCase("Test 11", 11, 144);
     }
     
     @Override

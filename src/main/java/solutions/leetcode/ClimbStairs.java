@@ -22,6 +22,16 @@ public class ClimbStairs extends Solution<Integer, Integer> {
     }
 
     public int climbStairs(int n) {
-        return 0;
+        
+        if ( n < 1 ) return 1;
+        
+        int[] refTab = new int[n + 1];
+        refTab[0] = 1;
+        refTab[1] = 1;
+        
+        for ( int i = 2; i <= n; i ++ ) {
+            refTab[i] = refTab[i-2] + refTab[i-1];
+        }
+        return refTab[n];
     }
 }
