@@ -28,6 +28,7 @@ public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends Sol
         addClass(53, MaxSubSeqSumServiceImpl.class);
         addClass(64, MinPathSumServiceImpl.class);
         addClass(70, ClimbStairsServiceImpl.class);
+        addClass(91, DecodeWaysServiceImpl.class);
         
         
         procSvcNumLst();
