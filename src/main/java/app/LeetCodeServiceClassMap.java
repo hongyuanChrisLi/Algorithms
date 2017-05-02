@@ -29,7 +29,7 @@ public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends Sol
         addClass(64, MinPathSumServiceImpl.class);
         addClass(70, ClimbStairsServiceImpl.class);
         addClass(91, DecodeWaysServiceImpl.class);
-        
+        addClass(95, UniqueBinarySearchTreeIIServiceImpl.class);
         
         procSvcNumLst();
     }
