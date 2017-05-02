@@ -6,18 +6,26 @@ public class TreeNode {
     public TreeNode right;
     public TreeNode(int x) { val = x; }
     
+    public void print() {
+        System.out.print(toString("", true));
+    }
     
-    public void print(String prefix, boolean isTail) {
-        System.out.println(prefix + (isTail ? "└── " : "├── ") + Integer.toString(val));
+    public String toString(String prefix, boolean isTail) {
+        
+        String res = "";
+        
+        res += prefix + (isTail ? "└── " : "├── ") + Integer.toString(val) + "\n";
+        
         if ( left != null)
-            left.print(prefix + (isTail ? "    " : "│   "), false);    
-        else
-            System.out.println(prefix + (isTail ? "    " : "│   ") + "└── L(null)" );
+            res += left.toString(prefix + (isTail ? "    " : "│   "), false);    
+        else if (right != null)
+            res += prefix + (isTail ? "    " : "│   ") + "├── L(null)\n" ;
         
         if ( right != null) 
-            right.print(prefix + "    ", true);
-        else
-            System.out.println(prefix + (isTail ? "    " : "│   ") + "└── R(null)" );
-            
+            res += right.toString(prefix + (isTail ? "    " : "│   "), true);
+        else if (left != null)
+            res += prefix + (isTail ? "    " : "│   ") + "└── R(null)\n" ;      
+    
+        return res;
     }
 }
