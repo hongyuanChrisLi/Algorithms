@@ -8,6 +8,23 @@ import java.util.List;
 import base.Solution;
 import structures.TreeNode;
 
+/*
+ * 
+https://leetcode.com/problems/unique-binary-search-trees-ii/#/description
+
+Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1...n.
+
+For example,
+Given n = 3, your program should return all 5 unique BST's shown below.
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
+ * 
+ * */
+
 public class UniqueBinarySearchTreeII extends Solution<Integer, List<TreeNode>> {
 
     @Override
@@ -34,20 +51,20 @@ public class UniqueBinarySearchTreeII extends Solution<Integer, List<TreeNode>> 
         }
         
     }
-    
-    //private TreeNode[][] chainNodes;    // left points to tree Nodes, 
-                                        //right points to next chainNode
-    
+                                
     public List<TreeNode> generateTrees(int n) {
         
         if ( n < 1 )
             return new ArrayList<TreeNode>();
         
         TreeNode[][] chainNodes = new TreeNode[n+2][n+2];
+            // left points to tree Nodes,
+            //right points to next chainNode
         
         for (int i = 0; i < n+2; i ++)
             for (int j =0; j < n+2; j++)
                 chainNodes[i][j] = new TreeNode(0);
+            // Initialize, 0 means useful chainNode, -1 means NOT useful. 
         
         List<TreeNode> res = new ArrayList<TreeNode>();
         
