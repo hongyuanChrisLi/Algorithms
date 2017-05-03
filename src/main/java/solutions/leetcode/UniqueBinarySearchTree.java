@@ -42,7 +42,19 @@ public class UniqueBinarySearchTree extends Solution<Integer, Integer> {
 
     public int numTrees(int n) {
         
-        return 0;
+        if ( n < 2 ) return 1;
+        
+        int[] ref = new int[n+1];
+        
+        ref[0] = 1;
+        ref[1] = 1;
+
+        for (int i = 2; i <= n; i++)
+            for (int j = 0; j < i; j++ ) {
+                ref[i] += ref[j] * ref[i-j-1]; 
+            }
+
+        return ref[n];
     }
     
 }
