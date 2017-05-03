@@ -31,6 +31,7 @@ public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends Sol
         addClass(91, DecodeWaysServiceImpl.class);
         addClass(95, UniqueBinarySearchTreeIIServiceImpl.class);
         addClass(96, UniqueBinarySearchTreeServiceImpl.class);
+        addClass(10, RegexMatchServiceImpl.class);
         
         procSvcNumLst();
     }
