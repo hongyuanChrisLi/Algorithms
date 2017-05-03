@@ -35,10 +35,59 @@ public class UniqueBinarySearchTreeII extends Solution<Integer, List<TreeNode>> 
         
     }
     
+    //private TreeNode[][] chainNodes;    // left points to tree Nodes, 
+                                        //right points to next chainNode
+    
     public List<TreeNode> generateTrees(int n) {
+        
+        if ( n < 1 )
+            return new ArrayList<TreeNode>();
+        
+        TreeNode[][] chainNodes = new TreeNode[n+2][n+2];
+        
+        for (int i = 0; i < n+2; i ++)
+            for (int j =0; j < n+2; j++)
+                chainNodes[i][j] = new TreeNode(0);
+        
         List<TreeNode> res = new ArrayList<TreeNode>();
-        res.add(new TreeNode(1));
+        
+        for (int i = n; i > 0; i --){
+            chainNodes[i][i].left = new TreeNode(i);
+                for (int j = i + 1; j <= n; j ++) {
+                    TreeNode curChainNode = chainNodes[i][j];
+                    for ( int k = i; k <= j; k ++){
+                        
+                        TreeNode leftChain = chainNodes[i][k-1];
+                        TreeNode rightChain = chainNodes[k+1][j];
+                        
+                        while (leftChain != null && leftChain.val == 0){
+                            TreeNode curRightChain = rightChain;
+                            while (curRightChain != null && curRightChain.val == 0) {
+                                
+                                TreeNode root = new TreeNode(k);
+                                root.left = leftChain.left;
+                                root.right = curRightChain.left;
+                                
+                                curChainNode.left = root;
+                                curChainNode.val = 0;
+                                curChainNode.right = new TreeNode(-1);
+                                
+                                curChainNode = curChainNode.right;
+                                curRightChain = curRightChain.right;
+                            }
+                            leftChain = leftChain.right;
+                        }
+                    }
+                }
+        }
+        
+        TreeNode curChain = chainNodes[1][n];
+        while (curChain != null && curChain.val == 0){
+            res.add(curChain.left);
+            curChain = curChain.right;
+        }
+        
         return res ;
     }
-
+    
 }

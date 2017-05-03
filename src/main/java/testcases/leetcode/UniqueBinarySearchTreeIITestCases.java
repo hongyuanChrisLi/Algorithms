@@ -115,6 +115,13 @@ public class UniqueBinarySearchTreeIITestCases extends TestCases<Integer, List<T
         bst.add(nodes.get(0));
         //nodes.get(0).print();
         
+        nodes = genNodes(4);
+        nodes.get(0).right = nodes.get(1);
+        nodes.get(1).right = nodes.get(3);
+        nodes.get(3).left = nodes.get(2);
+        bst.add(nodes.get(0));
+        //nodes.get(0).print();
+        
         
         nodes = genNodes(4);
         nodes.get(1).left = nodes.get(0);
@@ -178,7 +185,15 @@ public class UniqueBinarySearchTreeIITestCases extends TestCases<Integer, List<T
         nodes.get(0).right = nodes.get(1);
         nodes.get(1).right = nodes.get(2);
         bst.add(nodes.get(3));
-        nodes.get(3).print();
+        //nodes.get(3).print();
+        
+        nodes = genNodes(4);
+        nodes.get(3).left = nodes.get(0);
+        nodes.get(0).right = nodes.get(2);
+        nodes.get(2).left = nodes.get(1);
+        bst.add(nodes.get(3));
+        //nodes.get(3).print();
+        
         
         return bst;
     }
