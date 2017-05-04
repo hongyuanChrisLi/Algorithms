@@ -2,6 +2,8 @@ package solutions.leetcode;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Arrays;
+
 import base.Solution;
 import structures.TwoComposite;
 
@@ -50,7 +52,44 @@ public class RegexMatch extends Solution<TwoComposite<String, String>, Boolean> 
     }
     
     public boolean isMatch(String s, String p) {
-        return false;
+        
+        s = s + (char) 2;
+        p = p + (char) 2;
+        
+        int sLen = s.length();
+        int pLen = p.length();
+        int dLen = 1;
+        p = p + (char) 0;
+
+        boolean[][] refTab = new boolean[pLen + 1][sLen + 1];
+        refTab[0][0] = true;
+        
+        int pIdx = 0;
+        
+        while (pIdx < pLen) {
+            char curChar = p.charAt(pIdx);
+            char nextChar = p.charAt(pIdx + 1);
+            boolean isStarChar = curChar != '*' && nextChar == '*';
+            
+            if (isStarChar){
+                pIdx += 2;
+                refTab[dLen][0] = refTab[dLen-1][0];
+            } else pIdx += 1;
+
+            for (int j = 0; j < sLen; j++ ) {
+                boolean isMatch = s.charAt(j) == curChar || curChar == '.';
+                refTab[dLen][j+1] = (isStarChar 
+                                        && (refTab[dLen - 1][j+1] 
+                                                || (isMatch && refTab[dLen][j]))) 
+                                    || (isMatch && refTab[dLen-1][j]);
+            }
+            dLen += 1;
+        }
+        
+        /*for (int i = 0; i < dLen; i++)
+            System.out.println(Arrays.toString(refTab[i]));*/
+  
+        return refTab[dLen-1][sLen];  
     }
 
 }

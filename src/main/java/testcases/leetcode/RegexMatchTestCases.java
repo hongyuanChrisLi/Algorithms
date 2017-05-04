@@ -17,7 +17,20 @@ public class RegexMatchTestCases extends TestCases<TwoComposite<String, String>,
         addTestCase("Test 4", "aa", "a*", true);
         addTestCase("Test 5", "aa", ".*", true);
         addTestCase("Test 6", "ab", ".*", true);
-        addTestCase("Test 7", "aab", "c*a*b*", true); 
+        addTestCase("Test 7", "aab", "c*a*b*", true);
+        addTestCase("Test 8", "caab", "ca*c*b", true);
+        addTestCase("Test 9", "caab", "cda*b", false);
+        addTestCase("Test 10", "caaddeb", "ca*.*b", true);
+        addTestCase("Test 11", "", ".*", true);
+        addTestCase("Test 12", "", "", true);
+        addTestCase("Test 13", "a", "", false);
+        addTestCase("Test 14", "aaa", "ab*ac*a", true);
+        addTestCase("Test 15", "ab", ".*..", true);
+        addTestCase("Test 16", "a", "ab*a", false);
+        addTestCase("Test 17", "", "c*", true);
+        addTestCase("Test 18", "", "c*c*", true);
+        addTestCase("Test 19", "b", "aaa.", false);
+        addTestCase("Test 20", "", "..*", false);
     }
     
     @Override
