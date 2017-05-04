@@ -58,13 +58,13 @@ public class RegexMatch extends Solution<TwoComposite<String, String>, Boolean> 
         
         int sLen = s.length();
         int pLen = p.length();
-        int dLen = 1;
+        int dLen = 1; // mark number of pattern units (e.g. a, a*, ., .*)
         p = p + (char) 0;
 
         boolean[][] refTab = new boolean[pLen + 1][sLen + 1];
         refTab[0][0] = true;
         
-        int pIdx = 0;
+        int pIdx = 0; // index to loop through patter String p
         
         while (pIdx < pLen) {
             char curChar = p.charAt(pIdx);
@@ -78,10 +78,12 @@ public class RegexMatch extends Solution<TwoComposite<String, String>, Boolean> 
 
             for (int j = 0; j < sLen; j++ ) {
                 boolean isMatch = s.charAt(j) == curChar || curChar == '.';
-                refTab[dLen][j+1] = (isStarChar 
-                                        && (refTab[dLen - 1][j+1] 
-                                                || (isMatch && refTab[dLen][j]))) 
-                                    || (isMatch && refTab[dLen-1][j]);
+                boolean isStarMatch = isMatch && isStarChar;
+                refTab[dLen][j+1] = isMatch && refTab[dLen - 1][j]  // 1. direct match at [i][j] and [i-1][j-1] is a match
+                        || isStarMatch && refTab[dLen][j]           // 2. direct match at [i][j], but [i-1][j-1] is NOT a match. 
+                                                                    //      Since it's a star match, check if [i][j-1] is a match
+                        || isStarChar && refTab[dLen - 1][j + 1];   // 3. NOT direct match [i][j], but it's a star char (e.g. a*)
+                                                                    //      check if [i-1][j] is a match, meaning skip [i][j]
             }
             dLen += 1;
         }
