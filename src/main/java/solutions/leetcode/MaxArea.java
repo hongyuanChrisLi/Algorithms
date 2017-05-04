@@ -14,6 +14,9 @@ Find two lines, which together with x-axis forms a container, such that the cont
 
 Note: You may not slant the container and n is at least 2.
 
+https://leetcode.com/articles/container-most-water/
+https://discuss.leetcode.com/topic/503/anyone-who-has-a-o-n-algorithm/3
+
  * 
  * */
 public class MaxArea extends Solution<int[], Integer> {
@@ -34,7 +37,19 @@ public class MaxArea extends Solution<int[], Integer> {
     }
     
     public int maxArea(int[] height) {
-        return 0;
+        
+        int arrayLen = height.length;
+        int i = 0, j = arrayLen - 1;
+        int maxArea = 0;
+        
+        while (i < j) {
+            int minHeight = Math.min(height[i], height[j]);
+            maxArea = Math.max(maxArea, (j-i)*minHeight);
+            if ( height[i] < height[j]) i += 1;
+            else j -= 1;
+        }
+        
+        return maxArea;
     }
 
 }

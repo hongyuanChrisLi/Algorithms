@@ -10,6 +10,7 @@ public class MaxAreaTestCases extends TestCases<int[], Integer> implements TestC
 
     public MaxAreaTestCases(){
         addTestCase("Test 1", new int[]{2,3,2,1}, 4);
+        addTestCase("Test 2", new int[]{1,8,6,2,5,4,8,3,7}, 49);
     }
     
     @Override
