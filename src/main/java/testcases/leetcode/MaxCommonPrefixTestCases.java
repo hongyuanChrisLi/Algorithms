@@ -10,6 +10,9 @@ public class MaxCommonPrefixTestCases extends TestCases<String[], String> implem
 
     public MaxCommonPrefixTestCases(){
         addTestCase("Basic Test", new String[]{"ABCDE", "ABSFG"}, "AB");
+        addTestCase("Test 2", new String[]{"absdet", "abstain", "absolute"}, "abs");
+        addTestCase("Empty String", new String[]{"", "abstain", "absolute"}, "");
+        addTestCase("Test 4", new String[]{"cabsdet", "abstain", "absolute"}, "");
     }
     
     @Override
