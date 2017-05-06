@@ -25,7 +25,6 @@ public class RomanToInteger extends Solution<String, Integer> {
         
         int strLen = s.length();
         if (strLen < 1) return 0;
-        s = s + (char) 'B';
         /*
          * 
          Char   I   V   X   L   C   D   M
