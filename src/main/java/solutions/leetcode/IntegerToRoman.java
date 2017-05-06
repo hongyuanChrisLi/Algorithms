@@ -44,9 +44,7 @@ public class IntegerToRoman extends Solution<Integer, String> {
         
         for ( int i = sig - 1; i >= 0; i-- ){
             int fract = num / baseInt[i];
-            String part = "";
-            while(fract-- > 0) part += baseRoman[i];
-            res += part;
+            while(fract-- > 0) res += baseRoman[i];
             num = num  % baseInt[i];
         }
         return res;

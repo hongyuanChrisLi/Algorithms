@@ -34,6 +34,7 @@ public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends Sol
         addClass(10, RegexMatchServiceImpl.class);
         addClass(11, MaxAreaServiceImpl.class);
         addClass(12, IntegerToRomanServiceImpl.class);
+        addClass(13, RomanToIntegerServiceImpl.class);
         
         procSvcNumLst();
     }
