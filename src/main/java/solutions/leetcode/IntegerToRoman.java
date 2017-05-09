@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.IntegerToRomanTestCases;
 
 /*
  * 
@@ -48,5 +50,10 @@ public class IntegerToRoman extends Solution<Integer, String> {
             num = num  % baseInt[i];
         }
         return res;
+    }
+
+    @Override
+    protected TestCases<Integer, String> genTestCases() {
+        return new IntegerToRomanTestCases();
     }
 }

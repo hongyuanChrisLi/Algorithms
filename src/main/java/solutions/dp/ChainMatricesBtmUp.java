@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import base.Solution;
+import base.TestCases;
+import testcases.dp.ChainMatricesTestCases;
 
 /*
  * 
@@ -104,6 +106,11 @@ public class ChainMatricesBtmUp extends Solution<int[], List<List<Integer>>> {
         }
 
         return res;
+    }
+
+    @Override
+    protected TestCases<int[], List<List<Integer>>> genTestCases() {
+        return new ChainMatricesTestCases();
     }
 
 }

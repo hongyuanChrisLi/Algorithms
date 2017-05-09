@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.ReverseIntegerTestCases;
 
 
 /*
@@ -54,6 +56,11 @@ public class ReverseInteger extends Solution<Integer, Integer> {
             x = x / 10;      
         }
         return res;
+    }
+
+    @Override
+    protected TestCases<Integer, Integer> genTestCases() {
+        return new ReverseIntegerTestCases();
     }
 
     

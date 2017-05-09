@@ -6,7 +6,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.leetcode.TwoSumTestCases;
 
 /*
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -54,6 +56,11 @@ public class TwoSum extends Solution<TwoComposite<int[], Integer>, int[]> {
     @Override
     protected void testOutput(int[] outputTest, int[] output) {
         assertArrayEquals(outputTest, output);
+    }
+
+    @Override
+    protected TestCases<TwoComposite<int[], Integer>, int[]> genTestCases() {
+        return new TwoSumTestCases();
     }
 
 }

@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.LongestPalindromeTestCases;
 
 /*
  * 
@@ -83,6 +85,11 @@ public class LongestPalindrome extends Solution<String, String[]> {
 
         return String.copyValueOf(Arrays.copyOfRange(charArray, centerIdx - (maxSubPalinLen - 1) / 2,
                 centerIdx + (maxSubPalinLen - 1) / 2)).replaceAll("#", "");
+    }
+
+    @Override
+    protected TestCases<String, String[]> genTestCases() {
+        return new LongestPalindromeTestCases();
     }
 
 }

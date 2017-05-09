@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.ThreeSumTestCases;
 
 
 /*
@@ -88,6 +90,11 @@ public class ThreeSum extends Solution<int[], List<List<Integer>>> {
             preNum = nums[i];
         }
         return res;
+    }
+
+    @Override
+    protected TestCases<int[], List<List<Integer>>> genTestCases() {
+        return new ThreeSumTestCases();
     }
     
 }

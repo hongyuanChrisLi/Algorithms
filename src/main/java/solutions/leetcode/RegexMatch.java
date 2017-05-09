@@ -5,7 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.leetcode.RegexMatchTestCases;
 
 /*
  * 
@@ -92,6 +94,11 @@ public class RegexMatch extends Solution<TwoComposite<String, String>, Boolean> 
             System.out.println(Arrays.toString(refTab[i]));*/
   
         return refTab[dLen-1][sLen];  
+    }
+
+    @Override
+    protected TestCases<TwoComposite<String, String>, Boolean> genTestCases() {
+        return new RegexMatchTestCases();
     }
 
 }

@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.UniqueBinarySearchTreeTestCases;
 
 /*
  * 
@@ -55,6 +57,11 @@ public class UniqueBinarySearchTree extends Solution<Integer, Integer> {
             }
 
         return ref[n];
+    }
+
+    @Override
+    protected TestCases<Integer, Integer> genTestCases() {
+        return new UniqueBinarySearchTreeTestCases();
     }
     
 }

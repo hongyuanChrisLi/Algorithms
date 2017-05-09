@@ -5,7 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.dp.MaxCommonSubSeqTestCases;
 
 /*
  *
@@ -97,6 +99,11 @@ public class MaxCommonSubSeqBtmUp extends Solution<TwoComposite<String, String>,
         }
         
         return res;
+    }
+
+    @Override
+    protected TestCases<TwoComposite<String, String>, String> genTestCases() {
+        return new MaxCommonSubSeqTestCases();
     }
     
 }

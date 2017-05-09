@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.StringToIntegerTestCases;
 
 /*
  *
@@ -98,6 +100,11 @@ public class StringToInteger extends Solution<String, Integer> {
         }
         
         return num * sign;
+    }
+
+    @Override
+    protected TestCases<String, Integer> genTestCases() {
+        return new StringToIntegerTestCases();
     }
 
 }

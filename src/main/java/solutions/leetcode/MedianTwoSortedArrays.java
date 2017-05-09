@@ -3,7 +3,9 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
 import structures.IntArrayIntArray;
+import testcases.leetcode.MedianTwoSortedArraysTestCases;
 
 /*
  * 
@@ -104,6 +106,11 @@ public class MedianTwoSortedArrays extends Solution<IntArrayIntArray, Double> {
         }
         
         return false;
+    }
+
+    @Override
+    protected TestCases<IntArrayIntArray, Double> genTestCases() {
+        return new MedianTwoSortedArraysTestCases();
     }
     
 /* [FAIL] Time Limit Exceeded   

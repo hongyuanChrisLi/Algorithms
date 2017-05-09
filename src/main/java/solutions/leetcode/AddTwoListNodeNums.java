@@ -3,9 +3,11 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
 import mappers.ListNodeMapper;
 import structures.ListNode;
 import structures.ListNodeListNode;
+import testcases.leetcode.AddTwoListNodeNumsTestCases;
 
 /*
  * 
@@ -38,6 +40,11 @@ public class AddTwoListNodeNums extends Solution<ListNodeListNode, ListNode> {
     @Override
     protected void testOutput(ListNode outputTest, ListNode output) {
         assertEquals( ListNodeMapper.toString(outputTest), ListNodeMapper.toString(output));
+    }
+    
+    @Override
+    protected TestCases<ListNodeListNode, ListNode> genTestCases() {
+        return new AddTwoListNodeNumsTestCases();
     }
     
     ListNode head, tail;
@@ -97,4 +104,6 @@ public class AddTwoListNodeNums extends Solution<ListNodeListNode, ListNode> {
             tail = node;
         }
     }
+
+
 }

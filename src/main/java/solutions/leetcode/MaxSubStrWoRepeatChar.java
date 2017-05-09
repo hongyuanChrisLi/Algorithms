@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.MaxSubStrWoRepeatCharTestCases;
 
 /*
  * 
@@ -63,6 +65,11 @@ public class MaxSubStrWoRepeatChar extends Solution<String, Integer> {
             subStrMap[charIdx] = i;
         }
         return maxLen;  
+    }
+
+    @Override
+    protected TestCases<String, Integer> genTestCases() {
+        return new MaxSubStrWoRepeatCharTestCases();
     }
     
     

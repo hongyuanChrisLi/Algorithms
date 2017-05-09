@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.PalindromeNumberTestCases;
 
 /*
  * 
@@ -50,6 +52,11 @@ public class PalindromeNumber extends Solution<Integer, Boolean> {
         System.out.printf("%d, %d\n", x, rev);
         
         return ( x == rev || x == rev / 10);
+    }
+
+    @Override
+    protected TestCases<Integer, Boolean> genTestCases() {
+        return new PalindromeNumberTestCases();
     }
     
     /*public boolean isPalindrome(int x) {

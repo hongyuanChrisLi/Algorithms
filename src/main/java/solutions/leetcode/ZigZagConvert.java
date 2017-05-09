@@ -3,7 +3,9 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.leetcode.ZigZagConvertTestCases;
 
 
 /*
@@ -108,6 +110,11 @@ public class ZigZagConvert extends Solution<TwoComposite<String, Integer>, Strin
             }
         }
         return String.copyValueOf(charArray);
+    }
+
+    @Override
+    protected TestCases<TwoComposite<String, Integer>, String> genTestCases() {
+        return new ZigZagConvertTestCases();
     }
 
 }

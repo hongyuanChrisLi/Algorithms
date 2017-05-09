@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.DecodeWaysTestCases;
 
 /*
  * 
@@ -68,6 +70,11 @@ public class DecodeWays extends Solution<String, Integer> {
             preVal = curVal;
         }
         return ref[strLen];
+    }
+
+    @Override
+    protected TestCases<String, Integer> genTestCases() {
+        return new DecodeWaysTestCases();
     }
 
 }

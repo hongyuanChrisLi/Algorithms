@@ -5,7 +5,9 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.leetcode.ThreeSumClosestTestCases;
 
 /*
  * 
@@ -65,5 +67,10 @@ public class ThreeSumClosest extends Solution<TwoComposite<int[], Integer>, Inte
         }
 
         return res;
+    }
+
+    @Override
+    protected TestCases<TwoComposite<int[], Integer>, Integer> genTestCases() {
+        return new ThreeSumClosestTestCases();
     }
 }

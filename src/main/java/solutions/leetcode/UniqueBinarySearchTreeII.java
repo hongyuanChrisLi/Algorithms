@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import base.Solution;
+import base.TestCases;
 import structures.TreeNode;
+import testcases.leetcode.UniqueBinarySearchTreeIITestCases;
 
 /*
  * 
@@ -105,6 +107,11 @@ public class UniqueBinarySearchTreeII extends Solution<Integer, List<TreeNode>> 
         }
         
         return res ;
+    }
+
+    @Override
+    protected TestCases<Integer, List<TreeNode>> genTestCases() {
+        return new UniqueBinarySearchTreeIITestCases();
     }
     
 }

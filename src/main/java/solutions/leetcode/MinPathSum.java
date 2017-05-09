@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.MinPathSumTestCases;
 
 
 /*
@@ -56,6 +58,11 @@ public class MinPathSum extends Solution<int[][], Integer> {
             System.out.println(Arrays.toString(grid[i]));*/
         
         return grid[m-1][n-1];
+    }
+
+    @Override
+    protected TestCases<int[][], Integer> genTestCases() {
+        return new MinPathSumTestCases();
     }
 
 }

@@ -3,8 +3,9 @@ package base;
 import structures.TestCase;
 
 public abstract class Solution<T_In, T_Out>{
-
-    public void runTests(TestCases<T_In, T_Out> testCases){
+    
+    public void runTests(){  
+        TestCases<T_In, T_Out> testCases = genTestCases();
         for ( TestCase<T_In, T_Out> testCase : testCases){
             String testName = this.getClass().getSimpleName() + " - " + testCase.getTestName();
             T_Out output = runTest(testCase.getInput());
@@ -38,4 +39,5 @@ public abstract class Solution<T_In, T_Out>{
     protected abstract T_Out runTest(T_In input);
     protected abstract void printOutputData(T_Out output);
     protected abstract void testOutput(T_Out outputTest, T_Out output);
+    protected abstract TestCases<T_In, T_Out> genTestCases();
 }

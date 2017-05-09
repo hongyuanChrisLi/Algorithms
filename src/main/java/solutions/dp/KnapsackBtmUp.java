@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import base.Solution;
+import base.TestCases;
 import structures.TwoComposite;
+import testcases.dp.KnapsackTestCases;
 
 /*
  * 
@@ -101,5 +103,10 @@ public class KnapsackBtmUp extends Solution<TwoComposite<int[][], Integer>, List
         }
         
         return res;
+    }
+
+    @Override
+    protected TestCases<TwoComposite<int[][], Integer>, List<Integer>> genTestCases() {
+        return new KnapsackTestCases();
     }
 }

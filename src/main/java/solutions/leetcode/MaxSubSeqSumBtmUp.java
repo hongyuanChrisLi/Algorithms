@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.MaxSubSeqSumTestCases;
 
 /*
  * 
@@ -61,5 +63,10 @@ public class MaxSubSeqSumBtmUp extends Solution<int[], Integer> {
             System.out.println(Arrays.toString(refTab[i]));*/
         
         return maxSum;
+    }
+
+    @Override
+    protected TestCases<int[], Integer> genTestCases() {
+        return new MaxSubSeqSumTestCases();
     }
 }

@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.ClimbStairsTestCases;
 
 /*
  * 
@@ -46,5 +48,10 @@ public class ClimbStairs extends Solution<Integer, Integer> {
             refTab[i] = refTab[i-2] + refTab[i-1];
         }
         return refTab[n];
+    }
+
+    @Override
+    protected TestCases<Integer, Integer> genTestCases() {
+        return new ClimbStairsTestCases();
     }
 }

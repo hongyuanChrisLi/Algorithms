@@ -5,10 +5,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import base.SolutionService;
-import services.leetcode.*;
+import base.Solution;
+import solutions.leetcode.*;
 
-public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends SolutionService>> {
+
+public class LeetCodeServiceClassMap extends HashMap<String, List<Class<? extends Solution<?,?>>>> {
     private static final long serialVersionUID = 8073262282403642560L;
     private String maxNumStr;
     private String lastest;
@@ -16,35 +17,47 @@ public class LeetCodeServiceClassMap extends HashMap<String, Class<? extends Sol
     private List<Integer> svcNumLst = new ArrayList<Integer>();
     
     public LeetCodeServiceClassMap(){
-        addClass(1, TwoSumServiceImpl.class);
-        addClass(2, MedianTwoSortedArraysServiceImpl.class);
-        addClass(3, AddTwoListNodeNumsServiceImpl.class);
-        addClass(4, MaxSubStrWoRepeatCharServiceImpl.class);
-        addClass(5, LongestPalindromeServiceImpl.class);
-        addClass(6, ZigZagConvertServiceImpl.class);
-        addClass(7, ReverseIntegerServiceImpl.class);
-        addClass(8, StringToIntegerServiceImpl.class);
-        addClass(9, PalindromeNumberServiceImpl.class);
-        addClass(53, MaxSubSeqSumServiceImpl.class);
-        addClass(64, MinPathSumServiceImpl.class);
-        addClass(70, ClimbStairsServiceImpl.class);
-        addClass(91, DecodeWaysServiceImpl.class);
-        addClass(95, UniqueBinarySearchTreeIIServiceImpl.class);
-        addClass(96, UniqueBinarySearchTreeServiceImpl.class);
-        addClass(10, RegexMatchServiceImpl.class);
-        addClass(11, MaxAreaServiceImpl.class);
-        addClass(12, IntegerToRomanServiceImpl.class);
-        addClass(13, RomanToIntegerServiceImpl.class);
-        addClass(14, MaxCommonPrefixServiceImpl.class);
-        addClass(15, ThreeSumServiceImpl.class);
-        addClass(16, ThreeSumClosestServiceImpl.class);
+        addClass(1, TwoSum.class);
+        addClass(2, MedianTwoSortedArrays.class);
+        addClass(2, MedianTwoSortedArraysBestSolution.class);
+        addClass(3, AddTwoListNodeNums.class);
+        addClass(3, AddTwoListNodeNumsOptimized.class);
+        addClass(4, MaxSubStrWoRepeatChar.class);
+        addClass(5, LongestPalindrome.class);
+        addClass(6, ZigZagConvert.class);
+        addClass(7, ReverseInteger.class);
+        addClass(8, StringToInteger.class);
+        addClass(9, PalindromeNumber.class);
+        addClass(53, MaxSubSeqSumBtmUp.class);
+        addClass(53, MaxSubSeqSumOptimal.class);
+        addClass(64, MinPathSum.class);
+        addClass(70, ClimbStairs.class);
+        addClass(91, DecodeWays.class);
+        addClass(95, UniqueBinarySearchTreeII.class);
+        addClass(96, UniqueBinarySearchTree.class);
+        addClass(10, RegexMatch.class);
+        addClass(11, MaxArea.class);
+        addClass(12, IntegerToRoman.class);
+        addClass(13, RomanToInteger.class);
+        addClass(14, MaxCommonPrefix.class);
+        addClass(15, ThreeSum.class);
+        addClass(16, ThreeSumClosest.class);
         
         procSvcNumLst();
     }
     
-    private void addClass(int num, Class<? extends SolutionService> solutionClass){
-        svcNumLst.add(num);
-        this.put(Integer.toString(num), solutionClass);
+    private void addClass(int num, Class<? extends Solution<?,?>> solutionClass){
+        
+        String key = Integer.toString(num);
+        
+        if (this.containsKey(key)){
+            this.get(key).add(solutionClass);
+        } else {
+            svcNumLst.add(num);
+            List<Class<? extends Solution<?,?>>> classLst = new ArrayList<Class<? extends Solution<?,?>>>();
+            classLst.add(solutionClass);
+            this.put(key, classLst);
+        } 
     }
     
     private void procSvcNumLst(){

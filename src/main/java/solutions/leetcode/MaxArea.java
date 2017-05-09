@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.MaxAreaTestCases;
 /*
  * 
 
@@ -50,6 +52,11 @@ public class MaxArea extends Solution<int[], Integer> {
         }
         
         return maxArea;
+    }
+
+    @Override
+    protected TestCases<int[], Integer> genTestCases() {
+        return new MaxAreaTestCases();
     }
 
 }

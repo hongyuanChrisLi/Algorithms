@@ -3,6 +3,14 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.RomanToIntegerTestCases;
+
+/*
+ * 
+ https://leetcode.com/problems/roman-to-integer/#/description
+ 
+ * */
 
 public class RomanToInteger extends Solution<String, Integer> {
 
@@ -46,6 +54,11 @@ public class RomanToInteger extends Solution<String, Integer> {
             preVal = curVal;
         }
         return res;
+    }
+
+    @Override
+    protected TestCases<String, Integer> genTestCases() {
+        return new RomanToIntegerTestCases();
     }
     
 }

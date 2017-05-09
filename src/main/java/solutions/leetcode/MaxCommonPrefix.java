@@ -3,6 +3,8 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import base.Solution;
+import base.TestCases;
+import testcases.leetcode.MaxCommonPrefixTestCases;
 
 /*
  * 
@@ -50,5 +52,10 @@ public class MaxCommonPrefix extends Solution<String[], String> {
             maxCom += curChar;
         }
         return maxCom;
+    }
+
+    @Override
+    protected TestCases<String[], String> genTestCases() {
+        return new MaxCommonPrefixTestCases();
     }
 }
