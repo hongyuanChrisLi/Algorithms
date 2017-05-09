@@ -20,6 +20,10 @@ public class FourSumTestCases extends TestCases<TwoComposite<int[], Integer>, Li
             {-2, -1, 1, 2},
             {-2,  0, 0, 2}
         });
+        addTestCase("Test Zeros", new int[]{0,0,0,0,0,0}, 0, 
+                new int[][]{
+            {0,0,0,0}
+        });
     }
     
     @Override
