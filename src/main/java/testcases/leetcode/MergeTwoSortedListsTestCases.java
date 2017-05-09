@@ -18,6 +18,16 @@ public class MergeTwoSortedListsTestCases extends TestCases<TwoComposite<ListNod
                 ListNodeMapper.toListNode(new int[]{3,4,6}),
                 ListNodeMapper.toListNode(new int[]{1,2,3,4,5,6})
                 );
+        addTestCase("Test 2", 
+                ListNodeMapper.toListNode(new int[]{}),
+                ListNodeMapper.toListNode(new int[]{3,4,6}),
+                ListNodeMapper.toListNode(new int[]{3,4,6})
+                );
+        addTestCase("Test 3", 
+                ListNodeMapper.toListNode(new int[]{2}),
+                ListNodeMapper.toListNode(new int[]{3}),
+                ListNodeMapper.toListNode(new int[]{2,3})
+                );
     }
     
     @Override

@@ -27,7 +27,7 @@ public class ListNodeMapper {
         int lstLen = numList.length;
         
         if (lstLen == 0) {
-            return new ListNode(0);
+            return null;
         }
         
         ListNode head = new ListNode(numList[lstLen - 1]);
