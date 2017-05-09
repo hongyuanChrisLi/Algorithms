@@ -17,6 +17,21 @@ public class RmNthFromEndTestCases extends TestCases<TwoComposite<ListNode, Inte
             ListNodeMapper.toListNode(new int[]{1,2,3,4,5}),
             2, 
             ListNodeMapper.toListNode(new int[]{1,2,3,5}));
+        
+        addTestCase("Test 2",
+                ListNodeMapper.toListNode(new int[]{1,2,3,4}),
+                1, 
+                ListNodeMapper.toListNode(new int[]{1,2,3}));
+        
+        addTestCase("Test 3",
+                ListNodeMapper.toListNode(new int[]{1,2,3,4}),
+                4, 
+                ListNodeMapper.toListNode(new int[]{2,3,4}));
+        
+        addTestCase("Test 4",
+                ListNodeMapper.toListNode(new int[]{1,2,3,4}),
+                5, 
+                ListNodeMapper.toListNode(new int[]{1,2,3,4}));
     }
     
     @Override

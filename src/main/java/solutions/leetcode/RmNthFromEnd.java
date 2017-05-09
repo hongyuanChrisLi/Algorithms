@@ -31,8 +31,51 @@ public class RmNthFromEnd extends Solution<TwoComposite<ListNode, Integer>, List
         return new RmNthFromEndTestCases();
     }
     
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        return null;
+    public ListNode removeNthFromEnd(ListNode head, int n){
+        ListNode start = new ListNode(0);
+        ListNode fast = head, slow = start;
+        start.next = head;
+        int dist = 0;
+        
+        while(dist < n && fast != null){
+            fast = fast.next;
+            dist++;
+        }
+        
+        while (fast != null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        
+        slow.next = dist == n ? slow.next.next : slow.next;
+        
+        return start.next;
     }
+    
+    
+/*    public ListNode removeNthFromEnd(ListNode head, int n) {
+        
+        ListNode a = head;
+        ListNode b = head;
+        
+        int dist = 0;
+        
+        while (a != null && dist <= n){
+            a = a.next;
+            dist++;
+        }
+        
+        while (a != null) {
+            a = a.next;
+            b = b.next;
+        }
+        
+        if ( dist > n )
+            b.next = b.next.next;
+        else if (dist == n)
+            head = head.next;
+            
+        return head;
+    }*/
 
 }
