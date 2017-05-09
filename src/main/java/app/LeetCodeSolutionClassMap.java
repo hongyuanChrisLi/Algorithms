@@ -44,6 +44,7 @@ public class LeetCodeSolutionClassMap extends HashMap<String, List<Class<? exten
         addClass(16, ThreeSumClosest.class);
         addClass(17, PhoneNumToLetters.class);
         addClass(18, FourSum.class);
+        addClass(19, RmNthFromEnd.class);
         
         procSvcNumLst();
     }
