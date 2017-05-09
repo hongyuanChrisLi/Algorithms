@@ -9,14 +9,14 @@ import base.Solution;
 import solutions.leetcode.*;
 
 
-public class LeetCodeServiceClassMap extends HashMap<String, List<Class<? extends Solution<?,?>>>> {
+public class LeetCodeSolutionClassMap extends HashMap<String, List<Class<? extends Solution<?,?>>>> {
     private static final long serialVersionUID = 8073262282403642560L;
     private String maxNumStr;
     private String lastest;
     private String numRange = "";
     private List<Integer> svcNumLst = new ArrayList<Integer>();
     
-    public LeetCodeServiceClassMap(){
+    public LeetCodeSolutionClassMap(){
         addClass(1, TwoSum.class);
         addClass(2, MedianTwoSortedArrays.class);
         addClass(2, MedianTwoSortedArraysBestSolution.class);
@@ -42,6 +42,7 @@ public class LeetCodeServiceClassMap extends HashMap<String, List<Class<? extend
         addClass(14, MaxCommonPrefix.class);
         addClass(15, ThreeSum.class);
         addClass(16, ThreeSumClosest.class);
+        addClass(17, PhoneNumToLetters.class);
         
         procSvcNumLst();
     }

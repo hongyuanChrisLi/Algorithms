@@ -9,8 +9,8 @@ import base.Solution;
 public class AlgorithmApp {
     
     private static final int INVALID_CHOICE = -1;
-    private LeetCodeServiceClassMap leetMap = new LeetCodeServiceClassMap();
-    private MiscServiceClassMap miscMap = new MiscServiceClassMap();
+    private LeetCodeSolutionClassMap leetMap = new LeetCodeSolutionClassMap();
+    private MiscSolutionClassMap miscMap = new MiscSolutionClassMap();
 
     private void printDesc(){
         String leetLatest = leetMap.getLastest();

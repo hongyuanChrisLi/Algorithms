@@ -3,6 +3,7 @@ package solutions.leetcode;
 import static org.junit.Assert.assertEquals;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -31,7 +32,9 @@ public class PhoneNumToLetters extends Solution<String, List<String>> {
 
     
     public List<String> letterCombinations(String digits) {
-        return null;
+        List<String> resLst = new LinkedList<String>();
+        
+        return resLst;
     }
 
     @Override

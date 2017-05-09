@@ -7,11 +7,11 @@ import java.util.List;
 import base.Solution;
 import solutions.dp.*;
 
-public class MiscServiceClassMap extends HashMap<String, List<Class<? extends Solution<?,?>>>> {
+public class MiscSolutionClassMap extends HashMap<String, List<Class<? extends Solution<?,?>>>> {
     private static final long serialVersionUID = 8181297436296714924L;
     private String latest;
     
-    public MiscServiceClassMap(){
+    public MiscSolutionClassMap(){
         addClass("dp1", MaxCommonSubSeqBtmUp.class);
         addClass("dp1", MaxCommonSubSeqTopDwn.class);
         addClass("dp2", KnapsackBtmUp.class);
