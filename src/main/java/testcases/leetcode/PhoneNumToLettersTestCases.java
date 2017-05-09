@@ -15,6 +15,14 @@ public class PhoneNumToLettersTestCases extends TestCases<String, List<String>>
     public PhoneNumToLettersTestCases() {
         addTestCase("Test Example", "23", 
                 Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"));
+        addTestCase("Test Empty", "", 
+                Arrays.asList());
+        addTestCase("Test Zero", "203", 
+                Arrays.asList());
+        addTestCase("Test One", "213", 
+                Arrays.asList());
+
+
     }
     
     @Override
