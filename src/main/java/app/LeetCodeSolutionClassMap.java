@@ -47,6 +47,8 @@ public class LeetCodeSolutionClassMap extends HashMap<String, List<Class<? exten
         addClass(19, RmNthFromEnd.class);
         addClass(20, ValidBrackets.class);
         addClass(21, MergeTwoSortedLists.class);
+        addClass(23, DivideTwoInt.class);
+        
         
         procSvcNumLst();
     }
