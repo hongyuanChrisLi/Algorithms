@@ -15,6 +15,11 @@ public class ReverseKGroupTestCases extends TestCases<TwoComposite<ListNode, Int
     public ReverseKGroupTestCases(){
         addTestCase("Test Example 1", new int[]{1,2,3,4,5}, 2, new int[]{2,1,4,3,5});
         addTestCase("Test Example 2", new int[]{1,2,3,4,5}, 3, new int[]{3,2,1,4,5});
+        addTestCase("Test 3", new int[]{1,2,3,4,5,6}, 4, new int[]{4,3,2,1,5,6});
+        addTestCase("Test 4", new int[]{1,2,3,4,5,6}, 3, new int[]{3,2,1,6,5,4});
+        addTestCase("Test 5", new int[]{1,2,3,4,5,6,7}, 3, new int[]{3,2,1,6,5,4,7});
+        addTestCase("Test 6", new int[]{1,2}, 3, new int[]{1,2});
+        addTestCase("Test 7", new int[]{}, 3, new int[]{});
     }
     
     @Override

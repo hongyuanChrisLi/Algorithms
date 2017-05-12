@@ -56,6 +56,49 @@ public class ReverseKGroup extends Solution<TwoComposite<ListNode, Integer>, Lis
     }
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        return null;
+       
+        ListNode start = new ListNode(0);
+        ListNode slow = start, fast = start;
+        start.next = head;
+        
+        while (true){
+            // example S->1->2->3->4->5
+            //System.out.println(ListNodeMapper.toString(fast));
+            
+            for ( int i = 0; i < k && fast != null; i++)
+                    fast = fast.next;
+            
+            if (fast == null) return start.next;
+            
+            // preserve tail 4->5
+            ListNode tail = fast.next;
+            // 3 -> null
+            fast.next = null;
+            
+            // worker == 1
+            ListNode worker = slow.next;
+            // slow -> 3 : S -> 3
+            slow.next = fast;
+            
+            // slow == 1
+            slow = worker;
+            // worker == 2
+            worker = worker.next;
+            // slow -> tail : 1 -> 4
+            slow.next = tail;
+            
+            // fast == 1
+            fast = slow;
+            
+            // reverse between 1 and 3
+            while (worker != null){
+                ListNode next = worker.next;
+                worker.next = slow;
+                slow = worker;
+                worker = next; 
+            }
+            
+            slow = fast;
+        }
     }
 }
