@@ -12,6 +12,10 @@ public class SwapNodePairsTestCases extends TestCases<ListNode, ListNode> implem
     
     public SwapNodePairsTestCases(){
         addTestCase("Test Example", new int[]{1,2,3,4}, new int[]{2,1,4,3});
+        addTestCase("Test 2", new int[]{1,2,3,4,5}, new int[]{2,1,4,3,5});
+        addTestCase("Test 3", new int[]{1,2}, new int[]{2,1});
+        addTestCase("Test 4", new int[]{4}, new int[]{4});
+        addTestCase("Test 5", new int[]{}, new int[]{});
     }
 
     @Override

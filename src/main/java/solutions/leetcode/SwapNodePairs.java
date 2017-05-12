@@ -49,6 +49,22 @@ public class SwapNodePairs extends Solution<ListNode, ListNode> {
     }
 
     public ListNode swapPairs(ListNode head) {
-        return null;
+        
+        ListNode start = new ListNode(0);
+        ListNode preLeft = start, preRight = head;
+        start.next = head;
+        
+        while (preRight != null && preRight.next != null) {
+            preLeft.next = preRight.next;
+            preLeft = preLeft.next;
+            
+            preRight.next = preLeft.next;
+            preLeft.next = preRight;
+            
+            preLeft = preLeft.next;
+            preRight = preRight.next;
+        }
+        
+        return start.next;
     }
 }
