@@ -8,6 +8,16 @@ import mappers.ListNodeMapper;
 import structures.ListNode;
 import testcases.leetcode.MergeKListsTestCases;
 
+/*
+ * 
+https://leetcode.com/problems/merge-k-sorted-lists/#/description
+
+Merge k sorted linked lists and return it as one sorted list. 
+Analyze and describe its complexity.
+
+ * 
+ * */
+
 public class MergeKLists extends Solution<ListNode[], ListNode> {
 
     @Override
@@ -22,8 +32,7 @@ public class MergeKLists extends Solution<ListNode[], ListNode> {
 
     @Override
     protected void testOutput(ListNode outputTest, ListNode output) {
-        assertEquals( ListNodeMapper.toString(outputTest), ListNodeMapper.toString(output));
-        
+        assertEquals( ListNodeMapper.toString(outputTest), ListNodeMapper.toString(output)); 
     }
 
     @Override
