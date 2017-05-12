@@ -52,6 +52,8 @@ public class LeetCodeSolutionClassMap extends HashMap<String, List<Class<? exten
         addClass(23, MergeKLists.class);
         addClass(24, SwapNodePairs.class);
         addClass(25, ReverseKGroup.class);
+        addClass(26, RmDuplicates.class);
+        addClass(27, RmElements.class);
         
         procSvcNumLst();
     }
