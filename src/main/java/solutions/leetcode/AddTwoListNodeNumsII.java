@@ -33,23 +33,54 @@ public class AddTwoListNodeNumsII extends Solution<ListNodeListNode, ListNode> {
 
   public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-    ListNode nl1 = reverseLinkedList(l1);
-    ListNode nl2 = reverseLinkedList(l2);
+    ListNode rl1 = reverseLinkedList(l1);
+    ListNode rl2 = reverseLinkedList(l2);
+    ListNode head = new ListNode(0);
+    ListNode pre = head;
+    head.next = rl1;
 
-    System.out.println(ListNodeMapper.toString(nl1));
-    System.out.println(ListNodeMapper.toString(nl2));
+    int carryOver = 0;
 
-    return null;
+    while (rl1 != null && rl2 != null){
+      int sum = rl1.val + rl2.val + carryOver;
+      carryOver = sum / 10;
+      rl1.val= sum % 10;
+
+      pre = rl1;
+      rl1 = rl1.next;
+      rl2 = rl2.next;
+    }
+
+    pre.next = rl1 == null? rl2 : rl1;
+    extendList(pre, carryOver);
+
+    // System.out.println(ListNodeMapper.toString(head.next));
+
+    return reverseLinkedList(head.next);
   }
 
+  private void extendList(ListNode pt, int carryOver){
+    ListNode pre = pt;
+    pt = pt.next;
+
+    while ( pt != null ){
+      int sum = pt.val + carryOver;
+      pt.val = sum % 10;
+      carryOver = sum / 10;
+      pre = pt;
+      pt = pt.next;
+    }
+
+    if (carryOver != 0){
+      pre.next = new ListNode(carryOver);
+    }
+  }
 
   private ListNode reverseLinkedList(ListNode l1){
-
 
     ListNode ptA, ptB;
     // ptA on original list
     // ptB on new list
-    // ptC temp
     ListNode head = new ListNode(0);
     head.next = l1;
     ptA = l1.next;
