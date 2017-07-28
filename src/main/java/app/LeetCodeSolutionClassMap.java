@@ -55,6 +55,7 @@ public class LeetCodeSolutionClassMap extends HashMap<String, List<Class<? exten
         addClass(26, RmDuplicates.class);
         addClass(27, RmElements.class);
         addClass(28, ImplStrStr.class);
+        addClass(445, AddTwoListNodeNumsII.class);
 
         procSvcNumLst();
     }
