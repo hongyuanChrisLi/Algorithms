@@ -59,6 +59,7 @@ public class LeetCodeSolutionClassMap extends
     addClass(28, ImplStrStr.class);
     addClass(445, AddTwoListNodeNumsII.class);
     addClass(554, BrickWall.class);
+    addClass(402, RmKElmes.class);
 
     procSvcNumLst();
   }
